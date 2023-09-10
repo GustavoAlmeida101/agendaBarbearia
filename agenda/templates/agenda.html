@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block 'head'%}
+<link type="text/css" rel="stylesheet" href="{% static 'css/agenda.css'%}"
+{% endblock %}
+{% block 'conteudo' %}
+<div id="agenda">
+    <form action="{% url 'salvar' %}" method="POST">
+      {% csrf_token %}
+      Nome:<input type="text" name="nome"><br><br>
+    Dia:<input type="date" name="dia"><br><br>
+    horas:<input type="time" name="hora" placeholder="hora:mn"><br><br>
+    Serviço:<input type="text" name="servico"><br><br>
+    <button type="submit">Agendar</button><br><br>
+  </form >
+   
+  <table id="tabela"  border="1">
+    <tr>
+      <td>Nome</td>
+    <td>Dia</td>
+    <td>hora</td>
+    <td>Seviço</td>
+    <td>atendido</td>
+  </tr>
+  {% for x in agendas %}
+
+  <tr>
+    <td>{{x.nome}}</td>
+    <td>{{x.dia}}</td>
+    <td>{{x.hora}}</td>
+    <td>{{x.servico}}</td>
+    <td><a href="{% url 'excluir' x.id%}"><img src="{% static 'img/check.png' %}"></a></td>
+  </tr>
+   {% endfor %}
+  </table>
+
+  </div>
+{% endblock 'conteudo' %}

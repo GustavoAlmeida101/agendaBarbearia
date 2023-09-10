@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/base.css' %}" >
+    {% block 'head'%}
+    {% endblock %}
+</head>
+
+<body>
+    <header id="header">
+        <img id="logo" src="{% static 'img/logo.jpg'%}">
+        <h2> Barbearia New Style<br>_________________<br>Um novo conceito em estilo</h2>
+          
+        
+        
+        <nav>
+            <ul id="menu">
+                <li><a href="{% url  'home' %}">home</a></li>
+                <li><a href="{% url  'agendar' %}" >agenda</a></li>
+                
+        </nav>
+        </ul>
+
+        
+    </header>
+    {% block 'conteudo' %}{% endblock 'conteudo' %}
+    <div id="info">
+     
+        <h4>Contatos:</h4>
+            <p>celular:(17)988642820</p>
+            <p>Instagram:@Barbershopnewstyle</p>
+         
+       </div>
+</body>
+
+</html>

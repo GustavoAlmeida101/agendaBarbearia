@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+ {% load static %}
+
+{% block 'conteudo' %}
+<h1>Bem Vindo a barbearia Barbershop New Style</h1>
+      <h3>Funcionamento de segunda a sabado <br>Dás 9h as 20h</h3>
+      <h3>Serviços que realizamos :</h3>
+      <div id="divs">
+        
+      <div>
+        <img src="{% static 'img/barba.jpg'%}">
+        <h3>Barba e Bigode <br>R$20,00</h3>
+        <select>
+        <option value="0" >opções de barba e bigode</option>
+          <option value="1" >tirada na navalha</option>
+          <option value="2" >desenhada</option>
+          <option value="3" >deixar só bigode</option>
+        </select>
+        
+      </div>
+      <div>
+        <img src="{% static 'img/cabelo.png'%}">
+        <h3>Cabelo R$30,00</h3>
+        <select>
+          <option value="0" >opções de cortes</option>
+          <option value="1" >Social</option>
+          <option value="2" >degradê</option>
+          <option value="3" >rastafire</option>
+        </select>
+      </div>
+      <div>
+        <img src="{% static 'img/sombrancelha.png'%}">
+        <h3>Sombrancelha <br> R$10,00</h3>
+        <select>
+          <option value="0" >opções de sombrancelha</option>
+          <option value="1" >tirar o excesso e  risquinho</option>
+          
+        </select>
+      </div>
+      <div>
+        <img src="{% static 'img/combo.png'%}">
+        <h3>Combo<br> R$50,00</h3>
+        <select>
+          <option value="0" >barba cabelo e sombrancelha</option>
+        </select>
+      </div>
+      
+    </div>
+    <div >
+      <button style="display: block;margin: 0 auto;" onclick="window.location.href = 'agenda'">Agendar horario</button>
+    </div>
+     
+{% endblock 'conteudo' %}
